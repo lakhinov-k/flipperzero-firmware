@@ -101,7 +101,6 @@ static constexpr BusInfo bus_table[] = {
     /*FuriHalBusLPUART1*/ {Bus::APB1, BusGroup::GRP2, LL_APB1_GRP2_PERIPH_LPUART1},
     /*FuriHalBusLPTIM2*/ {Bus::APB1, BusGroup::GRP2, LL_APB1_GRP2_PERIPH_LPTIM2},
 
-    /*FuriHalBusAPB2_GRP1*/ {Bus::APB2, BusGroup::GRP1, 0},
 #if defined(ADC_SUPPORT_2_5_MSPS)
     /*FuriHalBusADC*/ {Bus::APB2, BusGroup::GRP1, LL_APB2_GRP1_PERIPH_ADC},
 #endif

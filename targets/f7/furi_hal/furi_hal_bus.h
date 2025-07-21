@@ -45,7 +45,6 @@ typedef enum {
     FuriHalBusLPUART1,
     FuriHalBusLPTIM2,
 
-    FuriHalBusAPB2_GRP1,
 #if defined(ADC_SUPPORT_2_5_MSPS)
     FuriHalBusADC,
 #endif
