@@ -85,7 +85,7 @@ class HardwareTargetLoader:
             accepted_sources = list(
                 filter(
                     lambda f: f.name not in seen_filenames,
-                    self.env.GlobRecursive("*.c", target_dir),
+                    self.env.GlobRecursive("*.c*", target_dir),
                 )
             )
             seen_filenames.update(f.name for f in accepted_sources)

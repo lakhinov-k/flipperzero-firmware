@@ -8,14 +8,12 @@ extern "C" {
 #include "stdbool.h"
 
 typedef enum {
-    FuriHalBusAHB1_GRP1,
     FuriHalBusDMA1,
     FuriHalBusDMA2,
     FuriHalBusDMAMUX1,
     FuriHalBusCRC,
     FuriHalBusTSC,
 
-    FuriHalBusAHB2_GRP1,
     FuriHalBusGPIOA,
     FuriHalBusGPIOB,
     FuriHalBusGPIOC,
@@ -27,7 +25,6 @@ typedef enum {
 #endif
     FuriHalBusAES1,
 
-    FuriHalBusAHB3_GRP1,
     FuriHalBusQUADSPI,
     FuriHalBusPKA,
     FuriHalBusAES2,
@@ -36,7 +33,6 @@ typedef enum {
     FuriHalBusIPCC,
     FuriHalBusFLASH,
 
-    FuriHalBusAPB1_GRP1,
     FuriHalBusTIM2,
     FuriHalBusLCD,
     FuriHalBusSPI2,
@@ -46,7 +42,6 @@ typedef enum {
     FuriHalBusUSB,
     FuriHalBusLPTIM1,
 
-    FuriHalBusAPB1_GRP2,
     FuriHalBusLPUART1,
     FuriHalBusLPTIM2,
 
@@ -61,7 +56,6 @@ typedef enum {
     FuriHalBusTIM17,
     FuriHalBusSAI1,
 
-    FuriHalBusAPB3_GRP1,
     FuriHalBusRF,
 
     FuriHalBusMAX,
