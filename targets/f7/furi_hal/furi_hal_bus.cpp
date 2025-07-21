@@ -4,44 +4,39 @@
 #include <stm32wbxx_ll_bus.h>
 
 /* Bus bitmask definitions */
+constexpr uint32_t FURI_HAL_BUS_AHB1_GRP1 = LL_AHB1_GRP1_PERIPH_DMA1 | LL_AHB1_GRP1_PERIPH_DMA2 |
+                                            LL_AHB1_GRP1_PERIPH_DMAMUX1 | LL_AHB1_GRP1_PERIPH_CRC |
+                                            LL_AHB1_GRP1_PERIPH_TSC;
 
-#define FURI_HAL_BUS_AHB1_GRP1                                                           \
-    (LL_AHB1_GRP1_PERIPH_DMA1 | LL_AHB1_GRP1_PERIPH_DMA2 | LL_AHB1_GRP1_PERIPH_DMAMUX1 | \
-     LL_AHB1_GRP1_PERIPH_CRC | LL_AHB1_GRP1_PERIPH_TSC)
-
+constexpr uint32_t FURI_HAL_BUS_AHB2_GRP1 = LL_AHB2_GRP1_PERIPH_GPIOA | LL_AHB2_GRP1_PERIPH_GPIOB |
+                                            LL_AHB2_GRP1_PERIPH_GPIOC | LL_AHB2_GRP1_PERIPH_GPIOD |
+                                            LL_AHB2_GRP1_PERIPH_GPIOE | LL_AHB2_GRP1_PERIPH_GPIOH |
 #if defined(ADC_SUPPORT_5_MSPS)
-#define FURI_HAL_BUS_AHB2_GRP1                                                           \
-    (LL_AHB2_GRP1_PERIPH_GPIOA | LL_AHB2_GRP1_PERIPH_GPIOB | LL_AHB2_GRP1_PERIPH_GPIOC | \
-     LL_AHB2_GRP1_PERIPH_GPIOD | LL_AHB2_GRP1_PERIPH_GPIOE | LL_AHB2_GRP1_PERIPH_GPIOH | \
-     LL_AHB2_GRP1_PERIPH_ADC | LL_AHB2_GRP1_PERIPH_AES1)
-
-#define FURI_HAL_BUS_APB2_GRP1                                                          \
-    (LL_APB2_GRP1_PERIPH_TIM1 | LL_APB2_GRP1_PERIPH_SPI1 | LL_APB2_GRP1_PERIPH_USART1 | \
-     LL_APB2_GRP1_PERIPH_TIM16 | LL_APB2_GRP1_PERIPH_TIM17 | LL_APB2_GRP1_PERIPH_SAI1)
-#else
-#define FURI_HAL_BUS_AHB2_GRP1                                                           \
-    (LL_AHB2_GRP1_PERIPH_GPIOA | LL_AHB2_GRP1_PERIPH_GPIOB | LL_AHB2_GRP1_PERIPH_GPIOC | \
-     LL_AHB2_GRP1_PERIPH_GPIOD | LL_AHB2_GRP1_PERIPH_GPIOE | LL_AHB2_GRP1_PERIPH_GPIOH | \
-     LL_AHB2_GRP1_PERIPH_AES1)
-
-#define FURI_HAL_BUS_APB2_GRP1                                                            \
-    (LL_APB2_GRP1_PERIPH_ADC | LL_APB2_GRP1_PERIPH_TIM1 | LL_APB2_GRP1_PERIPH_SPI1 |      \
-     LL_APB2_GRP1_PERIPH_USART1 | LL_APB2_GRP1_PERIPH_TIM16 | LL_APB2_GRP1_PERIPH_TIM17 | \
-     LL_APB2_GRP1_PERIPH_SAI1)
+                                            LL_AHB2_GRP1_PERIPH_ADC |
 #endif
+                                            LL_AHB2_GRP1_PERIPH_AES1;
 
-#define FURI_HAL_BUS_AHB3_GRP1                                                          \
-    (LL_AHB3_GRP1_PERIPH_QUADSPI | LL_AHB3_GRP1_PERIPH_PKA | LL_AHB3_GRP1_PERIPH_AES2 | \
-     LL_AHB3_GRP1_PERIPH_RNG | LL_AHB3_GRP1_PERIPH_HSEM | LL_AHB3_GRP1_PERIPH_IPCC)
+constexpr uint32_t FURI_HAL_BUS_AHB3_GRP1 = LL_AHB3_GRP1_PERIPH_QUADSPI | LL_AHB3_GRP1_PERIPH_PKA |
+                                            LL_AHB3_GRP1_PERIPH_AES2 | LL_AHB3_GRP1_PERIPH_RNG |
+                                            LL_AHB3_GRP1_PERIPH_HSEM | LL_AHB3_GRP1_PERIPH_IPCC;
 //   LL_AHB3_GRP1_PERIPH_FLASH enabled by default
 
-#define FURI_HAL_BUS_APB1_GRP1                                                       \
-    (LL_APB1_GRP1_PERIPH_TIM2 | LL_APB1_GRP1_PERIPH_LCD | LL_APB1_GRP1_PERIPH_SPI2 | \
-     LL_APB1_GRP1_PERIPH_I2C1 | LL_APB1_GRP1_PERIPH_I2C3 | LL_APB1_GRP1_PERIPH_CRS | \
-     LL_APB1_GRP1_PERIPH_USB | LL_APB1_GRP1_PERIPH_LPTIM1)
+constexpr uint32_t FURI_HAL_BUS_APB1_GRP1 = LL_APB1_GRP1_PERIPH_TIM2 | LL_APB1_GRP1_PERIPH_LCD |
+                                            LL_APB1_GRP1_PERIPH_SPI2 | LL_APB1_GRP1_PERIPH_I2C1 |
+                                            LL_APB1_GRP1_PERIPH_I2C3 | LL_APB1_GRP1_PERIPH_CRS |
+                                            LL_APB1_GRP1_PERIPH_USB | LL_APB1_GRP1_PERIPH_LPTIM1;
 
-#define FURI_HAL_BUS_APB1_GRP2 (LL_APB1_GRP2_PERIPH_LPUART1 | LL_APB1_GRP2_PERIPH_LPTIM2)
-#define FURI_HAL_BUS_APB3_GRP1 (LL_APB3_GRP1_PERIPH_RF)
+constexpr uint32_t FURI_HAL_BUS_APB1_GRP2 = LL_APB1_GRP2_PERIPH_LPUART1 |
+                                            LL_APB1_GRP2_PERIPH_LPTIM2;
+
+constexpr uint32_t FURI_HAL_BUS_APB2_GRP1 =
+#if defined(ADC_SUPPORT_2_5_MSPS)
+    LL_APB2_GRP1_PERIPH_ADC |
+#endif
+    LL_APB2_GRP1_PERIPH_TIM1 | LL_APB2_GRP1_PERIPH_SPI1 | LL_APB2_GRP1_PERIPH_USART1 |
+    LL_APB2_GRP1_PERIPH_TIM16 | LL_APB2_GRP1_PERIPH_TIM17 | LL_APB2_GRP1_PERIPH_SAI1;
+
+constexpr uint32_t FURI_HAL_BUS_APB3_GRP1 = LL_APB3_GRP1_PERIPH_RF;
 
 enum class Bus : uint8_t {
     AHB1,
